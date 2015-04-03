@@ -17,7 +17,7 @@ NAME = cv-builder
 UID = $(id -u)
 GID = $(id -g)
 
-NAME = cv
+NAME = $(CV)
 XML_INPUT = $(NAME).xml
 PDF_OUTPUT = $(NAME).pdf
 HTML_OUTPUT = $(NAME).html
@@ -26,7 +26,7 @@ DVI_OUTPUT = $(NAME).dvi
 PS_OUTPUT = $(NAME).ps
 
 TRANSFORMERS_DIR = transformers
-LATEX_TRANSFORMER = $(TRANSFORMERS_DIR)/html/tex.xls
+LATEX_TRANSFORMER = $(TRANSFORMERS_DIR)/tex/tex.xls
 HTML_TRANSFORMER = $(TRANSFORMERS_DIR)/html/html.xls
 
 all: pdf ps html clean
@@ -44,11 +44,6 @@ run:
 html:
 	$(XSLT) -o $(HTML_OUTPUT) $(HTML_TRANSFORMER) $(XML_INPUT)
 
-pdf: tex
-	$(PDFLATEX) $(NAME).tex
-
-tex:
-	$(XSLT) -o $(NAME).tex $(NAME)_tex.xsl $(XML)
 
 pdf: tex
 	$(PDFLATEX) $(TEX_OUTPUT)

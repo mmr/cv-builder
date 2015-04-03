@@ -9,8 +9,10 @@ RUN apt-get update -q && \
         texlive-lang-portuguese \
         texlive-fonts-recommended
 
-ADD http://mirrors.ctan.org/macros/latex/contrib/url.zip \
-    /usr/share/texlive/texmf-dist/tex/latex
+RUN apt-get install -qy unzip
+
+COPY url.zip /tmp/url.zip
+RUN unzip /tmp/url.zip -d /usr/share/texlive/texmf-dist/tex/latex
 
 WORKDIR /data
 VOLUME ["/data"]

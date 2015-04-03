@@ -32,14 +32,14 @@ HTML_TRANSFORMER = $(TRANSFORMERS_DIR)/html/html.xls
 all: pdf ps html clean
 
 build-image:
-	docker build -t $(CONTAINER_NS)/$(CONTAINER_REPO) .
+	docker build -t $(CONTAINER_NS)/$(CONTAINER_REPO) image
 
-run:
+build:
 	docker run \
 		--rm -i --user=$(UID):$(GID) \
 		-v $(PWD):/data \
 		$(CONTAINER_NS)/$(CONTAINER_REPO) \
-		make
+		$@
 
 html:
 	$(XSLT) -o $(HTML_OUTPUT) $(HTML_TRANSFORMER) $(XML_INPUT)

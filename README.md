@@ -9,12 +9,12 @@ It uses docker to make the setup simpler, so you will not have to install all th
 
 All you have to do is:
 
-1. [Install docker](https://docs.docker.com/installation/)
-1. Add your local user to docker group:
+* [Install docker](https://docs.docker.com/installation/)
+* Add your local user to docker group:
 ```bash
 sudo usermod -aG docker <your_user>
 ```
-1. Pull image ([from Hub](https://registry.hub.docker.com/u/mribeiro/cv-builder)):
+* Pull image ([from Hub](https://registry.hub.docker.com/u/mribeiro/cv-builder)):
 ```bash
 docker pull mribeiro/cv-builder
 ```

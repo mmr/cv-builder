@@ -14,9 +14,8 @@ DOCKER ?= /usr/bin/docker
 # Constants
 CONTAINER_NS = mribeiro
 CONTAINER_REPO = cv-builder
+XMLLINT_REPO = xmllint
 NAME = cv-builder
-UID = $(id -u)
-GID = $(id -g)
 
 NAME = $(CV)
 XML_INPUT = $(NAME).xml
@@ -37,7 +36,7 @@ build-image:
 
 build:
 	$(DOCKER) run \
-		--rm -i --user=$(UID):$(GID) \
+		--rm -i --user=`id -u`:`id -g` \
 		-v $(PWD):/data \
 		$(CONTAINER_NS)/$(CONTAINER_REPO) \
 		$@

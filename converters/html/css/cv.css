@@ -1,0 +1,95 @@
+/*
+ * @version $Id: cv.css,v 1.11 2005/10/06 03:37:23 mmr Exp $
+ * @created in 12/06/2005
+ * @author Marcio Ribeiro <mmr@b1n.org>
+ */
+
+ul {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+ul li {
+    padding-bottom: 4px;
+}
+
+body {
+    background: #ccc;
+    text-align: center;
+}
+
+div#cv, div#ext {
+    text-align: left;
+    background:#fcfcfc;
+    color: #000;
+    font-family: helvetica, verdana, sans-serif;
+    font-size: 12px;
+    border: 1px outset GhostWhite;
+    width: 670px;
+    padding: 25px 25px 25px 25px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div#title {
+    text-align: right;
+    padding-bottom: 30px;
+    width: 200px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 2px;
+}
+
+div.section {
+    clear: both;
+    padding-bottom: 30px;
+}
+
+div.section div.title {
+    width: 200px;
+    text-align: right;
+    font-variant: small-caps;
+    font-weight: bold;
+    font-size: 14px;
+    padding-bottom: 15px;
+}
+
+div.section div.item {
+    padding-bottom: 5px;
+    clear: both;
+}
+
+div.section div.item div.key {
+    float: left;
+    width: 200px;
+    text-align: right;
+    font-weight: bold;
+}
+
+div.section div.item div.value {
+    text-align: justify;
+    margin-left: 240px;
+}
+
+div.subsection {
+    padding-bottom: 30px;
+}
+
+div.subsection div.item div.key {
+}
+
+div.subsection div.item div.value {
+}
+
+div#divisor {
+    background: url('../img/divisor.gif') repeat-y transparent;
+}
+
+div.personalData div.item div.specialValue {
+    font-weight: bold;
+}
+
+div.date {
+    font-style: italic;
+}

@@ -9,6 +9,7 @@ XSLT ?= /usr/bin/xsltproc
 LATEX ?= /usr/bin/latex
 DVIPS ?= /usr/bin/dvips
 PDFLATEX ?= /usr/bin/pdflatex
+DOCKER ?= /usr/bin/docker
 
 # Constants
 CONTAINER_NS = mribeiro
@@ -32,10 +33,10 @@ HTML_TRANSFORMER = $(TRANSFORMERS_DIR)/html/html.xls
 all: pdf ps html clean
 
 build-image:
-	docker build -t $(CONTAINER_NS)/$(CONTAINER_REPO) image
+	$(DOCKER) build -t $(CONTAINER_NS)/$(CONTAINER_REPO) image
 
 build:
-	docker run \
+	$(DOCKER) run \
 		--rm -i --user=$(UID):$(GID) \
 		-v $(PWD):/data \
 		$(CONTAINER_NS)/$(CONTAINER_REPO) \
@@ -43,7 +44,6 @@ build:
 
 html:
 	$(XSLT) -o $(HTML_OUTPUT) $(HTML_TRANSFORMER) $(XML_INPUT)
-
 
 pdf: tex
 	$(PDFLATEX) $(TEX_OUTPUT)

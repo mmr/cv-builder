@@ -1,0 +1,38 @@
+\providecommand*\ecvtitle{\Large\textbf{\textsc{c\ecv@kern u\ecv@kern r\ecv@kern r\ecv@kern
+i\ecv@kern c\ecv@kern u\ecv@kern l\ecv@kern u\ecv@kern m~~v\ecv@kern
+i\ecv@kern t\ecv@kern a\ecv@kern e}}}
+
+\providecommand{\ecvpersonalinfo}[1][0pt]{%
+{\large\textbf{\textsc{Personal information}}} & \tabularnewline[15pt]
+Name & \large\textbf{\ecv@firstname\ \textsc{\ecv@lastname}} \tabularnewline[5pt]
+\ifx\@empty\ecv@address\else
+  Address     & \large\textbf{\ecv@address}   \tabularnewline[5pt]
+\fi
+\ifx\@empty\ecv@telephone\else
+  Telephone   & \large\textbf{\ecv@telephone} \tabularnewline[5pt]
+\fi
+\ifx\@empty\ecv@fax\else
+  Fax         & \large\textbf{\ecv@fax} \tabularnewline[5pt]
+\fi
+\ifx\@empty\ecv@email\else
+  Email       & \ecv@email \tabularnewline[5pt]
+\fi
+\ifx\@empty\ecv@nationality\else
+  Nationality & \ecv@nationality \tabularnewline[5pt]
+\fi
+\ifx\@empty\ecv@birth\else
+  Date of birth & \ecv@birth \tabularnewline[5pt]
+\fi
+\ifx\@empty\ecv@civilstate\else
+  Civil State & \ecv@civilstate \tabularnewline[#1]
+\fi
+}
+
+\providecommand{\ecvlfoot}{%
+  \begin{minipage}{40mm}
+    \begin{flushright}
+       \footnotesize\textit{Page~\thepage~-~Curriculum vit\ae\ of}\\
+       \textit{\ecv@firstname\ \ecv@lastname}
+    \end{flushright}
+  \end{minipage}
+}

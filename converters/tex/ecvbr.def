@@ -1,0 +1,38 @@
+\renewcommand*\ecvtitle{\Large\textbf{\textsc{c\ecv@kern u\ecv@kern r\ecv@kern r\ecv@kern
+i\ecv@kern c\ecv@kern u\ecv@kern l\ecv@kern u\ecv@kern m~~v\ecv@kern
+i\ecv@kern t\ecv@kern a\ecv@kern e}}}
+
+\renewcommand{\ecvpersonalinfo}[1][0pt]{%
+{\large\textbf{\textsc{Informa\c{c}\~oes pessoais}}} & \tabularnewline[15pt]
+Nome & \large\textbf{\textsc{\ecv@firstname} \ecv@lastname} \tabularnewline[5pt]
+\ifx\@empty\ecv@address\else
+  Endere\c{c}o   & \large\textbf{\ecv@address}   \tabularnewline[5pt]
+\fi
+\ifx\@empty\ecv@telephone\else
+  Telefone    & \large\textbf{\ecv@telephone} \tabularnewline[5pt]
+\fi
+\ifx\@empty\ecv@fax\else
+  Fax         & \large\textbf{\ecv@fax} \tabularnewline[5pt]
+\fi
+\ifx\@empty\ecv@email\else
+  Email      & \ecv@email \tabularnewline[5pt]
+\fi
+\ifx\@empty\ecv@nationality\else
+  Nacionalidade & \ecv@nationality \tabularnewline[5pt]
+\fi
+\ifx\@empty\ecv@birth\else
+  Nascimento & \ecv@birth \tabularnewline[5pt]
+\fi
+\ifx\@empty\ecv@civilstate\else
+  Estado Civil & \ecv@civilstate \tabularnewline[#1]
+\fi
+}
+
+\renewcommand{\ecvlfoot}{%
+  \begin{minipage}{40mm}
+    \begin{flushright}
+       \footnotesize\textit{P\'agina~\thepage~-~Curriculum vit\ae\ de}\\
+       \textit{\ecv@firstname\ \ecv@lastname}
+    \end{flushright}
+  \end{minipage}
+}
